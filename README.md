@@ -27,14 +27,14 @@
           output: process.stdout,
       });
    ```
- we can declare an empty variable using let to store our student mark from the user input
+ we can declare an empty variable using let to store our student mark from the user input.
 
    ```javascript
        let studentMarks = " ";
    ```
    ### step 3
 
-we use .question() to ask the user to enter marks and pass it to the empty studentMarks variable
+we use .question() to ask the user to enter marks and pass it to the empty studentMarks variable.
 
     ```javascript
            r1.question("Enter student's marks ? \n " , function(number){
@@ -44,7 +44,7 @@ we use .question() to ask the user to enter marks and pass it to the empty stude
     ```
 ### step 4
 
-declare a function called grading where we use else-if to do our grading and console.log the outputs according to our criteria
+declare a function called grading where we use else-if to do our grading and console.log the outputs according to our criteria.
 
     ```javascript
 
@@ -63,7 +63,7 @@ declare a function called grading where we use else-if to do our grading and con
         }
 
     ```
-we call the grading function at the end and finally close the input stream prompt
+we call the grading function at the end and finally close the input stream prompt.
 
     ```js
          grading()
