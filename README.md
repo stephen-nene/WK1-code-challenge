@@ -41,12 +41,12 @@
              studentMarks = number;
            console.log("Student's marks is : " + studentMarks);
        })
-
     ```
     ### step 4
     declare a function called grading where we use else-if to do our grading and console.log the outputs according to our criteria
 
-    ```js
+    ```javascript
+
        function grading(){
     if(studentMarks > 79){
         console.log("Grade is: " + "A")
