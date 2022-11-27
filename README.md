@@ -42,7 +42,7 @@ we use .question() to ask the user to enter marks and pass it to the empty stude
            console.log("Student's marks is : " + studentMarks);
        })
     ```
-    ### step 4
+### step 4
     declare a function called grading where we use else-if to do our grading and console.log the outputs according to our criteria
 
     ```javascript
