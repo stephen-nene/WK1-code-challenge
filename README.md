@@ -27,14 +27,14 @@
           output: process.stdout,
       });
    ```
-   we can declare an empty variable using let to store our student mark from the user input
+ we can declare an empty variable using let to store our student mark from the user input
 
    ```javascript
        let studentMarks = " ";
    ```
    ### step 3
 
-    we use .question() to ask the user to enter marks and pass it to the empty studentMarks variable
+we use .question() to ask the user to enter marks and pass it to the empty studentMarks variable
 
     ```javascript
        r1.question("Enter student's marks ? \n " , function(number){
