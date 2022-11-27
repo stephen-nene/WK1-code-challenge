@@ -65,14 +65,11 @@ declare a function called grading where we use else-if to do our grading and con
    ```
 we call the grading function at the end and finally close the input stream prompt.
 
-    ```js
+  ```js
          grading()
 
          r1.close()
-    ```
-
-
-
+   ```
 # Challenge 2: Speed Detector
 
 # Challenge 3: Net Salary Calculator
