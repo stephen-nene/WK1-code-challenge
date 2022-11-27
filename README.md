@@ -32,8 +32,8 @@
    ```javascript
        let studentMarks = " ";
    ```
-    ### step 3
-    
+   ### step 3
+
     we use .question() to ask the user to enter marks and pass it to the empty studentMarks variable
 
     ```javascript
