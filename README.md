@@ -11,7 +11,7 @@
 
   ## Procedure
 
-    ### step 1
+ ### step 1
  To get user input in nodeJs we use prompt() function
  but we need to install the prompt sync module in our terminal using the below code
   `npm install prompt-sync`
