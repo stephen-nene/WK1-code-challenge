@@ -56,6 +56,14 @@ we call the grading function at the end
          grading(studentMarks)
 
    ```
+  ### step 3
+  to run the .js file we use the following command in our terminal
+        `node nameOfYourJsFile.js`
+
+   enter any kind of input to see if the code runs successfully     
+  ![Alt text](./example.png "sample outputs")
 # Challenge 2: Speed Detector
 
 # Challenge 3: Net Salary Calculator
+
+## Author
