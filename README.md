@@ -6,69 +6,55 @@
    
    * Write a javascript program that prompts the user to input student marks
    * The input should be between 0 and 100.
-   * Then output the correct grade arcoding to the criteria below: 
+   * Then output the correct grade according to the criteria below: 
         A > 79, B - 60 to 79, C -  59 to 49, D - 40 to 49, E - less 40.
 
   ## Procedure
 
     ### step 1
-   to prompt the user to enter grade in our terminal(NodeJs) we have to import the readline() package module
+ To get user input in nodeJs we use prompt() function
+ but we need to install the prompt sync module in our terminal using the below code
+  `npm install prompt-sync`
+
+  Then load the module in our .js file using the below code
 
    ```javascript
-   //This line below imports readline module
-   const readline = require('readline');
-   ```
-   ### step 2
-   Create an interface for our input and output operations.
+       let studentMarks = prompt("Enter student's marks ? ");
+       //This line below will display the entered marks back to the user.
+        console.log(`Student's marks is :  ${studentMarks}`);
 
-   ```javascript
-      const r1 = readline.createInterface({
-          input: process.stdin,
-          output: process.stdout,
-      });
    ```
- we can declare an empty variable using let to store our student mark from the user input.
-
-   ```javascript
-       let studentMarks = " ";
-   ```
-   ### step 3
-
-we use .question() to ask the user to enter marks and pass it to the empty studentMarks variable.
-
-   ```javascript
-           r1.question("Enter student's marks ? \n " , function(number){
-             studentMarks = number;
-           console.log("Student's marks is : " + studentMarks);
-       })
-   ```
-### step 4
+   This will store our users input in studentMarks variable 
+  ### step 4
 
 declare a function called grading where we use else-if to do our grading and console.log the outputs according to our criteria.
 
   ```javascript
 
-            function grading(){
-        if(studentMarks > 79){
-            console.log("Grade is: " + "A")
-        }else if(studentMarks >=60 ){
-            console.log("Grade is: " + "B")
-        }else if(studentMarks >= 49){
-            console.log("Grade is: " + "C")
-        }else if(studentMarks >= 40){
-            console.log("Grade is: " + "D")
-        }else{
-            console.log("Grade is: " + "E")
-        }
-        }
+         function grading(studentMarks){
+    
+    if(studentMarks >= 0 && studentMarks < 40){
+        console.log("Grade is E")
+    }else if(studentMarks >= 40 && studentMarks < 49   ){
+        console.log("Grade is D")
+    }else if(studentMarks >= 49 && studentMarks < 59  ){
+        console.log("Grade is C")
+    }else if( studentMarks >= 60 && studentMarks < 79 ){
+        console.log("Grade is B")
+    }else if(studentMarks >= 79 && studentMarks < 100 ){
+        console.log("Grade is A")
+    }else {
+        console.log("Student's marks is not valid");
+    }
+}
+
 
    ```
-we call the grading function at the end and finally close the input stream prompt.
+we call the grading function at the end 
 
   ```js
-         grading()
+         grading(studentMarks)
 
-         r1.close()
    ```
 # Challenge 2: Speed Detector
 
