@@ -37,7 +37,7 @@
 we use .question() to ask the user to enter marks and pass it to the empty studentMarks variable
 
     ```javascript
-       r1.question("Enter student's marks ? \n " , function(number){
+           r1.question("Enter student's marks ? \n " , function(number){
              studentMarks = number;
            console.log("Student's marks is : " + studentMarks);
        })
@@ -48,19 +48,19 @@ declare a function called grading where we use else-if to do our grading and con
 
     ```javascript
 
-       function grading(){
-    if(studentMarks > 79){
-        console.log("Grade is: " + "A")
-    }else if(studentMarks >=60 ){
-        console.log("Grade is: " + "B")
-    }else if(studentMarks >= 49){
-        console.log("Grade is: " + "C")
-    }else if(studentMarks >= 40){
-        console.log("Grade is: " + "D")
-    }else{
-        console.log("Grade is: " + "E")
-    }
-       }
+            function grading(){
+        if(studentMarks > 79){
+            console.log("Grade is: " + "A")
+        }else if(studentMarks >=60 ){
+            console.log("Grade is: " + "B")
+        }else if(studentMarks >= 49){
+            console.log("Grade is: " + "C")
+        }else if(studentMarks >= 40){
+            console.log("Grade is: " + "D")
+        }else{
+            console.log("Grade is: " + "E")
+        }
+        }
 
     ```
 we call the grading function at the end and finally close the input stream prompt
