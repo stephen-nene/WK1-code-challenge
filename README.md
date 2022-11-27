@@ -25,7 +25,7 @@
 
    ```
    This will store our users input in studentMarks variable 
-  ### step 4
+  ### step 2
 
 declare a function called grading where we use else-if to do our grading and console.log the outputs according to our criteria.
 
