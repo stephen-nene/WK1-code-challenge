@@ -1,0 +1,12 @@
+{
+  "name": "wk1-code-challenge",
+  "version": "1.0.0",
+  "description": "Runs all js files in this directory",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node student-grade-generator && node speedDetector && node netSalaryCalculator.js "
+  },
+  "author": "Stephen nene",
+  "license": "ISC"
+}

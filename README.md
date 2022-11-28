@@ -318,3 +318,8 @@ Stephen Nene. https:
 ## License: 
 
 ISC License.
+
+# NB
+### To run all three files at once use the following command
+
+`npm start`
