@@ -1,4 +1,4 @@
-
+//loading the prompt-sync module in our code and exports it to prompt variable
 const prompt = require('prompt-sync')();
 //below is where we get input from the user and store what is inputed in studentMarks variable
 let studentMarks = prompt("Enter student's marks ? ");
