@@ -75,7 +75,7 @@ we call the grading function at the end
 * If the speed is less than 70, it should print “Ok”. 
 * Otherwise, for every 5 km/s above the speed limit (70), it should give the driver one demerit point and print the total number of demerit points.
 
- ### step 1
+### step 1
  To get user input in nodeJs we use prompt() function
  but we need to install the prompt sync module in our terminal using the below code
   `npm install prompt-sync`
@@ -117,7 +117,7 @@ This line below will prompt user to enter speed and store our input in speed var
       }
 
   ```
-  ### step 3
+### step 3
   * Another else-if statement to check is points and determine what to do with it
 
 ```javascript
@@ -137,7 +137,7 @@ This line below will prompt user to enter speed and store our input in speed var
         speedDetector(speed);
   ```
 
-  ### step 4
+### step 4
   * To run the .js file we use the following command in our terminal
     
 `node nameOfYourJsFile.js`
@@ -146,10 +146,173 @@ This line below will prompt user to enter speed and store our input in speed var
   ![Alt text](./image/speed.png "sample outputs")
 
 # Challenge 3: Net Salary Calculator
+### step 1
+ * To get user input in nodeJs we use prompt() function
+ but we need to install the prompt sync module in our terminal using the below code. `npm install prompt-sync`
+
+  * Then load the module in our .js file using the below code
+
+  ```js
+  const promptSpeed = require('prompt-sync')();
+  ```
+* The lines below propmt the iuser to input BasicSalary and benefits
+* It then stores the values input by the user in the declared variables
+
+```javascript
+    const promptBasicSalary = require(`prompt-sync`)();
+    let basicSalary = promptBasicSalary("Enter basicSalary:")
+    const promptBenefits = require(`prompt-sync`)();
+    let benefits = promptBenefits("Enter benefits:")
+```
+### step 2
+
+* Declare a function called netSalaryCalculator to display the items calculated by other functions in a table form.
+
+```javascript
+    function netSalaryCalculator (){
+    const grossSalary = Number(basicSalary + benefits);
+    const nssf = calculateNSSF(grossSalary);
+    const taxableIncome = grossSalary-nssf;
+    const taxBeforeRelief = calculateTax(taxableIncome);
+    const personalRelief = 2400;
+    const nhif = calculateNHIF(grossSalary);
+    const insuranceRelief = nhif*0.15;
+    const taxes = taxBeforeRelief-(personalRelief+insuranceRelief);
+    const payee = (taxes<=0) ? 0 : taxes;
+    const netPay = grossSalary-(nssf + payee + nhif);
+
+    const result = {
+        "taxBeforeRelief" : taxBeforeRelief,
+        "taxableIncome" : taxableIncome,
+        "grossSalary" : grossSalary,
+        "NHIF" : nhif,
+        "NSSF" : nssf,
+        "payee(tax)" : payee,
+        // "netPay" : netPay,
+        "insuranceRelief" : insuranceRelief
+    };
+
+    console.table(result);
+    console.log(`Your net salary is : ${netPay} Ksh`)
+}
+```
+
+
+### step 3
+* Declare a function called calculateNSSF to do as it's name suggests using basicSalary from users input.
+
+```javascript
+   function calculateNSSF(basicSalary){
+    let nssf;
+    if(basicSalary<=6000){
+        nssf = basicSalary*0.06;
+    }
+    else if(basicSalary>6000 && basicSalary<18000){
+        nssf = (6000*0.06) + ((basicSalary-6000)*0.06);
+    }
+    else {
+        nssf = 360+720;
+    }
+    return nssf;
+}
+```
+* Declare another function called calculateTax that uses taxableIncome as it's parameter
+
+```javascript
+   function calculateTax(taxableIncome){
+    let tax = 0.01;
+    if(taxableIncome<=24000){
+        tax = taxableIncome*0.1;
+    }
+    else if(taxableIncome>24000 && taxableIncome<=32,333){
+        tax = (24000*0.1)+((taxableIncome-24000)*0.25);
+    }
+    else{
+        tax = (24000*0.1)+((8333)*0.25)+((taxableIncome-32333)*0.3);
+    }
+    return tax;
+}
+```
+* Our last function is calculateNHIF and its calculates the ammount of NSSF deductions to be used
+
+```javascript
+   function calculateNHIF(pay){
+    let deduction;
+    if(pay<=5999){
+        deduction = 150;
+    }
+    else if(pay>=6000 && pay<8000){
+        deduction = 300;
+    }
+    else if(pay>=8000 && pay<=11999){
+        deduction = 400;
+    }
+    else if(pay >= 12000 && pay <= 14999){
+        deduction = 500;
+    }
+    else if(pay >= 15000 && pay <= 19999){
+        deduction = 600;
+    }
+    else if(pay >= 20000 && pay <= 24999){
+        deduction = 750;
+    }
+    else if(pay >=25000 && pay <=29999){
+        deduction = 850;
+    }
+    else if(pay >=30000 && pay <= 34999){
+        deduction = 900;
+    }
+    else if(pay >= 35000 && pay <= 39999){
+        deduction = 950;
+    }
+    else if(pay >= 40000 && pay <= 44999){
+        deduction = 1000;
+    }
+    else if(pay >= 45000 && pay <= 49999){
+        deduction = 1100;
+    }
+    else if(pay >= 50000 && pay <= 59999){
+        deduction = 1200;
+    }
+    else if(pay >= 60000 && pay <= 69999){
+        deduction = 1300;
+    }
+    else if(pay >= 70000 && pay <= 79999){
+        deduction = 1400;
+    }
+    else if(pay >= 80000 && pay <= 89999){
+        deduction = 1500;
+    }
+    else if(pay >= 90000 && pay <= 99999){
+        deduction = 1600;
+    }
+    else{
+        deduction = 1700;
+    }
+
+    return deduction;
+}
+```
+we call the netSalaryCalculator function at the end of our program to produce a table of all the items.
+
+  ```js
+         netSalaryCalculator();
+
+   ```
+
+### step 4
+
+ to run the .js file we use the following command in our terminal
+    
+`node nameOfYourJsFile.js`
+
+   enter any kind of input to see if the code runs successfully     
+  ![Alt text](./image/salary.png "sample outputs")
 
 ## Author: 
 
-Stephen Nene. https://github.com/stephen-nene
+Stephen Nene. https:
+//github.com/stephen-nene
 
 
 ## License: 
